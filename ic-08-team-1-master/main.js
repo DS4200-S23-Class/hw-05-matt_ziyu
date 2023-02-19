@@ -75,7 +75,52 @@ function main(){
         .attr("y", (d) => {return Y_SCALE(d.Value)})
         .attr("width", X_SCALE.bandwidth())
         .attr("height", (d) => {return VIS_HEIGHT - Y_SCALE(d.Value) -50;});
-    });
-} ;
 
-console.log(data);
+
+
+    // Tooltip
+
+     // To add a tooltip, we will need a blank div that we 
+    //  fill in with the appropriate text. Be use to note the
+    //  styling we set here and in the .css
+    const TOOLTIP = d3.select("#vis1")
+                        .append("div")
+                          .attr("class", "tooltip")
+                          .style("opacity", 0); 
+
+    // Define event handler functions for tooltips
+    function handleMouseover(event, d) {
+      // on mouseover, make opaque 
+      TOOLTIP.style("opacity", 1); 
+      
+    }
+
+    function handleMousemove(event, d) {
+      // position the tooltip and fill in information 
+      TOOLTIP.html("Name: " + d.Category + "<br>Value: " + d.Value)
+              .style("left", (event.pageX + 10) + "px") //add offset
+                                                          // from mouse
+              .style("top", (event.pageY - 50) + "px"); 
+    }
+
+    function handleMouseleave(event, d) {
+      // on mouseleave, make transparant again 
+      TOOLTIP.style("opacity", 0); 
+    } 
+
+    // Add event listeners
+    g.selectAll(".bar")
+          .on("mouseover", handleMouseover) //add event listeners
+          .on("mousemove", handleMousemove)
+          .on("mouseleave", handleMouseleave);    
+
+    // Add an axis to the vis  
+    g.append("g") 
+          .attr("transform", "translate(" + MARG.left + 
+                "," + (VIS_HEIGHT + MARG.top) + ")") 
+          .call(d3.axisBottom(X_SCALE).ticks(4)) 
+            .attr("font-size", '20px'); 
+    });
+
+    
+} ;
