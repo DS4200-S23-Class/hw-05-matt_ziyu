@@ -1,0 +1,57 @@
+/* Make font Arial for whole text*/
+body {
+	font-family: Arial;
+  }
+  /* Make headers centered*/
+  h1,h3 {
+	text-align: center;
+  }
+  /* Style flexboc by making it max width and height, and make the direction up and down into cols*/
+  .flexbox{
+	max-height: 100%;
+	max-width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: left;
+  }
+/* Make flexbox width 50%*/
+  .flexbox1 {
+    flex-grow: 6;
+  }
+  .flexbox2 {
+  text-align: left;
+  flex-grow: 4;
+  }
+  /* Creaet graph width and height*/
+  svg.graph {
+    height: 800px;
+    width: 800px;
+  }
+  
+  svg.graph .grid {
+    stroke: white;
+    stroke-dasharray: 1 2;
+    stroke-width: 1;
+  }
+
+/* Make points a darker color*/
+  circle{
+    fill: #00554d;
+    stroke: transparent;
+    stroke-width: 4;
+  }
+  /* Change color of circle when you hover over it to red*/
+  circle:hover{
+    fill: Red;
+    stroke-width: 4;
+  }
+/* Change the border of the circles to green when clicked on*/
+.circle-click{
+  fill: #00554d;
+  stroke: greenyellow;
+  stroke-width: 4;
+}
+.bar{
+  fill:black;
+}
