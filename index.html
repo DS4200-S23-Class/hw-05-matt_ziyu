@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html> 
+
+<head>
+    <meta charset=utf-8/>
+        <!-- Link stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Include D3 library in head -->
+    <!-- Note: we use D3 v6 -->
+    <script src='js/d3.v6.1.1/d3.min.js'></script>
+    <title>hw-05</title>
+</head>
+
+<body onload = "main()">
+     <!-- Add header for website -->
+     <h1>hw-05: Interactive Graph with D3 </h1>
+
+
+     <div id = "Channels">
+        <div class = "flexbox">
+			<!-- Create div for our two plots that are on the right side above each other and connect them to flexbox1 to split the page 60%-->
+        <div class = "flexbox1">
+            <div id = "vis0"></div>
+            <div id = "vis1"></div>   
+            
+        </div>
+     <!-- Create div for points that the user inputs that is on the right side and has 40% of it-->
+     <div class = "flexbox2">
+        <div>
+            <p id = "cord" >Click a point to see it's coordinate!</p>
+        </div>
+        <div>
+            <!-- Create select option with x-axis options for the point  -->
+            <body> Select the x coordinate for the point you want to add. </body>
+            <select id = "x_cord">
+            <option value = 0> 0 </option>
+            <option value = 1> 1 </option>
+            <option value = 2> 2 </option>
+            <option value = 3> 3 </option>
+            <option value = 4> 4 </option>
+            <option value = 5> 5 </option>
+            <option value = 6> 6 </option>
+            <option value = 7> 7 </option>
+            <option value = 8> 8 </option>
+            <option value = 9> 9 </option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <!-- Create select option with y-axis options for point  -->
+            <body> Select the y coordinate for the point you want to add. </body>
+            <select id = "y_cord">
+            <option value = 0> 0 </option>
+            <option value = 1> 1 </option>
+            <option value = 2> 2 </option>
+            <option value = 3> 3 </option>
+            <option value = 4> 4 </option>
+            <option value = 5> 5 </option>
+            <option value = 6> 6 </option>
+            <option value = 7> 7 </option>
+            <option value = 8> 8 </option>
+            <option value = 9> 9 </option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <!-- Add a button to add the point once the user picked the coordinates  -->
+            <button id = "Add">Add Point</button>
+        </div>
+
+        </div>
+        </div>
+    </div>
+    
+
+<!-- Add acknowledgments with references that were used -->
+    <h3>Acknowledgements</h3>
+        <div>
+            <ul>
+                <li><a href = "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"> Flexbox Using CSS</li>
+                <li><a href = "https://www.geeksforgeeks.org/html-svg-basics/?ref=lbp"> SVG Graphic Basics using HTML</li>
+                <li><a href = "https://www.w3schools.com/js/js_input_examples.asp"> Adding Elements</li>
+                <li><a href = "https://d3-graph-gallery.com/intro_d3js.html"> Using D3 to Create Graphs </li>
+                <li><a href = "https://d3js.org/"> Basics of D3</li>
+                <li><a href = "https://observablehq.com/@d3/gallery"> Using D3 for Advanced Graphs</li>
+             </ul>
+        </div>
+
+     <!-- Include your js at end of body -->
+    <script src='main.js'></script>
+</body>
+
+</html>
